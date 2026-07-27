@@ -534,6 +534,14 @@
                 }
             }
         }
+
+        // Проверяем URL при загрузке страницы
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash === '#privacy') {
+                showView('privacy');
+            }
+        });
+
     </script>
 
 </body>
