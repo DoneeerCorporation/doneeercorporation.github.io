@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,10 +60,6 @@
             cursor: pointer;
         }
 
-        .nav-logo span {
-            color: var(--accent);
-        }
-
         .menu-btn {
             background: none;
             border: none;
@@ -81,7 +77,7 @@
             color: var(--accent);
         }
 
-        /* Выпадающее меню */
+        /* Dropdown Menu */
         .dropdown-menu {
             position: absolute;
             top: 70px;
@@ -288,7 +284,7 @@
             font-size: 1.1rem;
         }
 
-        /* Privacy Policy View (Экран политики) */
+        /* Privacy Policy View */
         .privacy-view {
             display: none;
             max-width: 800px;
@@ -360,30 +356,30 @@
 </head>
 <body>
 
-    <!-- Навигационная панель -->
+    <!-- Navigation Bar -->
     <nav>
-        <a class="nav-logo" onclick="showView('games')"><i class="fa-solid fa-gamepad" style="color: var(--accent);"></i> Doneeer<span>Corp</span></a>
+        <a class="nav-logo" onclick="showView('games')"><i class="fa-solid fa-gamepad" style="color: var(--accent);"></i> DoneeerCorporation</a>
         <button class="menu-btn" id="menuBtn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
         
-        <!-- Меню с выбором страниц -->
+        <!-- Dropdown Menu -->
         <div class="dropdown-menu" id="dropdownMenu">
             <a class="dropdown-item" onclick="showView('games')"><i class="fa-solid fa-dice" style="color: var(--accent);"></i> Games & Apps</a>
             <a class="dropdown-item" onclick="showView('privacy')"><i class="fa-solid fa-shield-halved" style="color: var(--accent);"></i> Privacy Policy</a>
         </div>
     </nav>
 
-    <!-- РАЗДЕЛ 1: ИГРЫ И ПРИЛОЖЕНИЯ -->
+    <!-- SECTION 1: GAMES & APPS -->
     <div id="gamesView">
         <header>
             <div class="studio-badge"><i class="fa-solid fa-gamepad"></i> Solo Indie Developer</div>
             <h1>DoneeerCorporation</h1>
-            <p>Создаю увлекательные мобильные игры и полезные приложения с душой.</p>
+            <p>Creating engaging mobile games and useful applications with passion.</p>
         </header>
 
         <div class="container">
             
-            <!-- Игры -->
-            <div class="section-title"><i class="fa-solid fa-dice"></i> Мои Игры</div>
+            <!-- Games -->
+            <div class="section-title"><i class="fa-solid fa-dice"></i> My Games</div>
             <div class="grid">
                 
                 <!-- Parrot Fly -->
@@ -397,8 +393,8 @@
                         <h3>Parrot Fly</h3>
                         <p>Pixel runner! Fly, dodge obstacles, upgrade skills, and reach the finish line!</p>
                         <div class="store-buttons">
-                            <a href="ССЫЛКА_GOOGLE_PLAY_1" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
-                            <a href="ССЫЛКА_AMAZON_1" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>
+                            <a href="GOOGLE_PLAY_LINK_1" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                            <a href="AMAZON_LINK_1" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>
                         </div>
                     </div>
                 </div>
@@ -414,8 +410,8 @@
                         <h3>Tap Duck</h3>
                         <p>Upgrade ducks, explore space, and prestige to become the ultimate duck tycoon!</p>
                         <div class="store-buttons">
-                            <a href="ССЫЛКА_GOOGLE_PLAY_2" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
-                            <a href="ССЫЛКА_AMAZON_2" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>
+                            <a href="GOOGLE_PLAY_LINK_2" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                            <a href="AMAZON_LINK_2" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>
                         </div>
                     </div>
                 </div>
@@ -431,16 +427,16 @@
                         <h3>Walking Virus</h3>
                         <p>Tap to survive the zombie apocalypse! Choose your side, upgrade, and fight waves.</p>
                         <div class="store-buttons">
-                            <a href="ССЫЛКА_GOOGLE_PLAY_3" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
-                            <a href="ССЫЛКА_AMAZON_3" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>
+                            <a href="GOOGLE_PLAY_LINK_3" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                            <a href="AMAZON_LINK_3" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Приложения -->
-            <div class="section-title"><i class="fa-solid fa-toolbox"></i> Приложения</div>
+            <!-- Apps -->
+            <div class="section-title"><i class="fa-solid fa-toolbox"></i> Applications</div>
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 580px;">
                 
                 <!-- ScanGo -->
@@ -454,8 +450,8 @@
                         <h3>ScanGo</h3>
                         <p>Scan, crop, and convert paper documents into high-quality PDFs instantly.</p>
                         <div class="store-buttons">
-                            <a href="ССЫЛКА_GOOGLE_PLAY_SCANGO" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
-                            <a href="ССЫЛКА_AMAZON_SCANGO" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>
+                            <a href="GOOGLE_PLAY_LINK_SCANGO" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
+                            <a href="AMAZON_LINK_SCANGO" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>
                         </div>
                     </div>
                 </div>
@@ -465,7 +461,7 @@
         </div>
     </div>
 
-    <!-- РАЗДЕЛ 2: ОБЩАЯ ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ -->
+    <!-- SECTION 2: PRIVACY POLICY -->
     <div id="privacyView" class="privacy-view">
         <div class="privacy-content">
             <h2>Privacy Policy</h2>
@@ -504,7 +500,7 @@
         <p>&copy; 2026 DoneeerCorporation. All rights reserved.</p>
     </footer>
 
-    <!-- Скрипт для работы меню и переключения страниц -->
+    <!-- Script for Navigation and View Switching -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('dropdownMenu');
@@ -529,7 +525,7 @@
             }
         }
 
-        // Закрытие меню при клике в любое другое место экрана
+        // Close menu when clicking outside
         window.onclick = function(event) {
             if (!event.target.matches('.menu-btn') && !event.target.closest('.menu-btn')) {
                 const menu = document.getElementById('dropdownMenu');
@@ -542,4 +538,3 @@
 
 </body>
 </html>
-
