@@ -18,11 +18,7 @@
             --radius: 16px;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Outfit', sans-serif;
@@ -33,7 +29,6 @@
             overflow-x: hidden;
         }
 
-        /* Navbar */
         nav {
             position: fixed;
             top: 0;
@@ -67,17 +62,10 @@
             font-size: 1.5rem;
             cursor: pointer;
             padding: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             transition: color 0.2s;
         }
+        .menu-btn:hover { color: var(--accent); }
 
-        .menu-btn:hover {
-            color: var(--accent);
-        }
-
-        /* Dropdown Menu */
         .dropdown-menu {
             position: absolute;
             top: 70px;
@@ -92,10 +80,7 @@
             overflow: hidden;
             z-index: 1001;
         }
-
-        .dropdown-menu.active {
-            display: flex;
-        }
+        .dropdown-menu.active { display: flex; }
 
         .dropdown-item {
             padding: 14px 20px;
@@ -110,17 +95,9 @@
             transition: background 0.2s, color 0.2s;
             cursor: pointer;
         }
+        .dropdown-item:last-child { border-bottom: none; }
+        .dropdown-item:hover { background: rgba(99, 102, 241, 0.15); color: var(--accent); }
 
-        .dropdown-item:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-item:hover {
-            background: rgba(99, 102, 241, 0.15);
-            color: var(--accent);
-        }
-
-        /* Header / Hero */
         header {
             text-align: center;
             padding: 140px 20px 40px;
@@ -148,18 +125,9 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        header p { color: var(--text-muted); font-size: 1.15rem; }
 
-        header p {
-            color: var(--text-muted);
-            font-size: 1.15rem;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 20px 80px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px 20px 80px; }
 
         .section-title {
             font-size: 1.8rem;
@@ -172,7 +140,6 @@
             padding-left: 12px;
         }
 
-        /* Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -180,7 +147,6 @@
             margin-bottom: 60px;
         }
 
-        /* Card */
         .card {
             background-color: var(--card-bg);
             border-radius: var(--radius);
@@ -190,44 +156,21 @@
             flex-direction: column;
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
-
         .card:hover {
             transform: translateY(-6px);
             box-shadow: 0 12px 30px var(--accent-glow);
             border-color: rgba(99, 102, 241, 0.4);
         }
 
-        .card-img-placeholder {
+        .card-img {
             width: 100%;
             height: 180px;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            position: relative;
+            object-fit: cover;
             border-bottom: 1px solid var(--border-color);
+            background: #1e293b;
         }
 
-        .card-img-placeholder i {
-            font-size: 2.5rem;
-            margin-bottom: 8px;
-            color: var(--accent);
-        }
-
-        .card-img-placeholder span {
-            font-size: 0.85rem;
-            opacity: 0.7;
-        }
-
-        .card-content {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
+        .card-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
         .card-tag {
             font-size: 0.75rem;
             font-weight: 700;
@@ -236,27 +179,10 @@
             color: var(--accent);
             margin-bottom: 8px;
         }
+        .card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; flex-grow: 1; }
 
-        .card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 24px;
-            flex-grow: 1;
-        }
-
-        /* Store Buttons */
-        .store-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
+        .store-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
         .btn-store {
             flex: 1;
             min-width: 120px;
@@ -274,17 +200,9 @@
             gap: 8px;
             transition: background 0.2s, border-color 0.2s;
         }
+        .btn-store:hover { background: rgba(99, 102, 241, 0.2); border-color: var(--accent); }
+        .btn-store i { font-size: 1.1rem; }
 
-        .btn-store:hover {
-            background: rgba(99, 102, 241, 0.2);
-            border-color: var(--accent);
-        }
-
-        .btn-store i {
-            font-size: 1.1rem;
-        }
-
-        /* Privacy Policy View */
         .privacy-view {
             display: none;
             max-width: 800px;
@@ -294,17 +212,8 @@
             border-radius: var(--radius);
             padding: 40px;
         }
-
-        .privacy-view.active {
-            display: block;
-        }
-
-        .privacy-content h2 {
-            color: var(--text-main);
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-
+        .privacy-view.active { display: block; }
+        .privacy-content h2 { color: var(--text-main); font-size: 2rem; margin-bottom: 8px; }
         .privacy-content h3 {
             color: var(--text-main);
             font-size: 1.3rem;
@@ -313,28 +222,11 @@
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 8px;
         }
+        .privacy-content p, .privacy-content li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 14px; }
+        .privacy-content ul { padding-left: 20px; margin-bottom: 14px; }
+        .privacy-content a { color: var(--accent); text-decoration: none; }
+        .privacy-content a:hover { text-decoration: underline; }
 
-        .privacy-content p, .privacy-content li {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 14px;
-        }
-
-        .privacy-content ul {
-            padding-left: 20px;
-            margin-bottom: 14px;
-        }
-
-        .privacy-content a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .privacy-content a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -343,32 +235,24 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-            .privacy-view {
-                padding: 20px;
-            }
+            header h1 { font-size: 2.2rem; }
+            .privacy-view { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav>
         <a class="nav-logo" onclick="showView('games')"><i class="fa-solid fa-gamepad" style="color: var(--accent);"></i> DoneeerCorporation</a>
         <button class="menu-btn" id="menuBtn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
-        
-        <!-- Dropdown Menu -->
+
         <div class="dropdown-menu" id="dropdownMenu">
             <a class="dropdown-item" onclick="showView('games')"><i class="fa-solid fa-dice" style="color: var(--accent);"></i> Games & Apps</a>
             <a class="dropdown-item" onclick="showView('privacy')"><i class="fa-solid fa-shield-halved" style="color: var(--accent);"></i> Privacy Policy</a>
         </div>
     </nav>
 
-    <!-- SECTION 1: GAMES & APPS -->
     <div id="gamesView">
         <header>
             <div class="studio-badge"><i class="fa-solid fa-gamepad"></i> Solo Indie Developer</div>
@@ -377,17 +261,10 @@
         </header>
 
         <div class="container">
-            
-            <!-- Games -->
             <div class="section-title"><i class="fa-solid fa-dice"></i> My Games</div>
             <div class="grid">
-                
-                <!-- Parrot Fly -->
                 <div class="card">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-crow"></i>
-                        <span>images/parrot-fly.png</span>
-                    </div>
+                    <img src="images/parrot-fly.png" alt="Parrot Fly" class="card-img">
                     <div class="card-content">
                         <span class="card-tag">Pixel Runner</span>
                         <h3>Parrot Fly</h3>
@@ -399,12 +276,8 @@
                     </div>
                 </div>
 
-                <!-- Tap Duck -->
                 <div class="card">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-duck"></i>
-                        <span>images/tap-duck.png</span>
-                    </div>
+                    <img src="images/tap-duck.png" alt="Tap Duck" class="card-img">
                     <div class="card-content">
                         <span class="card-tag">Idle Clicker</span>
                         <h3>Tap Duck</h3>
@@ -416,12 +289,8 @@
                     </div>
                 </div>
 
-                <!-- Walking Virus -->
                 <div class="card">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-biohazard"></i>
-                        <span>images/walking-virus.png</span>
-                    </div>
+                    <img src="images/walking-virus.png" alt="Walking Virus" class="card-img">
                     <div class="card-content">
                         <span class="card-tag">Zombie Idle RPG</span>
                         <h3>Walking Virus</h3>
@@ -432,19 +301,12 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <!-- Apps -->
             <div class="section-title"><i class="fa-solid fa-toolbox"></i> Applications</div>
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 580px;">
-                
-                <!-- ScanGo -->
                 <div class="card">
-                    <div class="card-img-placeholder">
-                        <i class="fa-solid fa-file-pdf"></i>
-                        <span>images/scango.png</span>
-                    </div>
+                    <img src="images/scango.png" alt="ScanGo" class="card-img">
                     <div class="card-content">
                         <span class="card-tag">PDF Scanner</span>
                         <h3>ScanGo</h3>
@@ -455,24 +317,20 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 
-    <!-- SECTION 2: PRIVACY POLICY -->
     <div id="privacyView" class="privacy-view">
         <div class="privacy-content">
             <h2>Privacy Policy</h2>
             <p><strong>Last updated: July 19, 2026</strong></p>
-
             <p>DoneeerCorporation ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and disclose information when you use our mobile applications and games.</p>
 
             <h3>1. Information We Collect</h3>
             <p>We do not collect or store any personal information (such as your name, address, or email) directly.</p>
             <p><strong>Game Progress & Local Data:</strong> We save your game progress locally on your device using Unity’s PlayerPrefs feature (or local storage). This data stays on your device and is not shared with us or any third parties.</p>
-            <p><strong>Advertising Data:</strong> We use Google AdMob as our advertising partner across our apps. AdMob may collect certain information, such as your device's advertising ID (AAID), IP address, and other technical identifiers, to provide personalized ads and measure ad performance. You can manage your ad preferences or opt-out of personalized advertising through your device's settings.</p>
+            <p><strong>Advertising Data:</strong> We use Google AdMob as our advertising partner across our apps. AdMob may collect certain information, such as your device's advertising ID (AAID), IP address, and other technical identifiers, to provide personalized ads and measure ad performance.</p>
 
             <h3>2. How We Use Information</h3>
             <p>The information collected by our advertising partner (Google AdMob) is used to:</p>
@@ -489,7 +347,7 @@
             <p>Our applications integrate the Google AdMob SDK. You can review Google’s privacy policy here: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.</p>
 
             <h3>5. Children's Privacy</h3>
-            <p>Our applications are intended for a general audience. We do not knowingly collect personal information from children under the age of 13. If you believe a child has provided us with personal information, please contact us immediately.</p>
+            <p>Our applications are intended for a general audience. We do not knowingly collect personal information from children under the age of 13.</p>
 
             <h3>6. Changes to This Policy</h3>
             <p>We may update this Privacy Policy from time to time. Any changes will be posted within this document.</p>
@@ -500,49 +358,37 @@
         <p>&copy; 2026 DoneeerCorporation. All rights reserved.</p>
     </footer>
 
-    <!-- Script for Navigation and View Switching -->
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('dropdownMenu');
-            menu.classList.toggle('active');
+            document.getElementById('dropdownMenu').classList.toggle('active');
         }
 
         function showView(viewName) {
             const gamesView = document.getElementById('gamesView');
             const privacyView = document.getElementById('privacyView');
-            const menu = document.getElementById('dropdownMenu');
-
-            menu.classList.remove('active');
+            document.getElementById('dropdownMenu').classList.remove('active');
 
             if (viewName === 'privacy') {
                 gamesView.style.display = 'none';
                 privacyView.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
                 gamesView.style.display = 'block';
                 privacyView.classList.remove('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Close menu when clicking outside
-        window.onclick = function(event) {
-            if (!event.target.matches('.menu-btn') && !event.target.closest('.menu-btn')) {
-                const menu = document.getElementById('dropdownMenu');
-                if (menu.classList.contains('active')) {
-                    menu.classList.remove('active');
-                }
-            }
-        }
-
-        // Проверяем URL при загрузке страницы
         window.addEventListener('DOMContentLoaded', () => {
             if (window.location.hash === '#privacy') {
                 showView('privacy');
             }
         });
 
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-btn') && !event.target.closest('.menu-btn')) {
+                document.getElementById('dropdownMenu').classList.remove('active');
+            }
+        }
     </script>
-
 </body>
 </html>
