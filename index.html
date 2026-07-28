@@ -230,6 +230,30 @@
         .privacy-content a { color: var(--accent); text-decoration: none; }
         .privacy-content a:hover { text-decoration: underline; }
 
+        .about-badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 30px; }
+        .about-badge {
+            background: rgba(99, 102, 241, 0.12);
+            color: var(--accent);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .contact-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-top: 10px;
+        }
+        .contact-box i { font-size: 1.4rem; color: var(--accent); }
+        .contact-box a { color: var(--text-main); text-decoration: none; font-weight: 600; }
+        .contact-box a:hover { color: var(--accent); }
+
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -252,6 +276,7 @@
 
         <div class="dropdown-menu" id="dropdownMenu">
             <a class="dropdown-item" onclick="showView('games')"><i class="fa-solid fa-dice" style="color: var(--accent);"></i> Games & Apps</a>
+            <a class="dropdown-item" onclick="showView('about')"><i class="fa-solid fa-circle-info" style="color: var(--accent);"></i> About</a>
             <a class="dropdown-item" onclick="showView('privacy')"><i class="fa-solid fa-shield-halved" style="color: var(--accent);"></i> Privacy Policy</a>
         </div>
     </nav>
@@ -323,9 +348,33 @@
         </div>
     </div>
 
+    <div id="aboutView" class="privacy-view">
+        <div class="privacy-content">
+            <h2>About</h2>
+            <p><strong>Hi, I'm the developer behind DoneeerCorporation 👋</strong></p>
+
+            <div class="about-badges">
+                <span class="about-badge"><i class="fa-solid fa-user"></i> Solo Indie Developer</span>
+                <span class="about-badge"><i class="fa-solid fa-seedling"></i> Just Getting Started</span>
+                <span class="about-badge"><i class="fa-solid fa-mobile-screen"></i> Mobile Games & Apps</span>
+            </div>
+
+            <p>I'm a one-person indie studio building small mobile games and apps for Google Play and beyond. There's no big team behind DoneeerCorporation — just me, learning as I go and trying to make games that are fun, polished, and a little different from the usual.</p>
+
+            <p>I'm still fairly new to this, so every release is a step in figuring out what works — from gameplay design to actually getting a game in front of players. Right now that means pixel runners, idle clickers, and small utility apps, but I'm always experimenting with new ideas.</p>
+
+            <h3>Let's connect</h3>
+            <p>I'm genuinely open to feedback, collaborations, or just hearing from other developers and players. If you've got ideas, want to team up, spotted a bug, or just want to say hi — reach out anytime.</p>
+
+            <div class="contact-box">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:doneeercorporation@gmail.com">doneeercorporation@gmail.com</a>
+            </div>
+        </div>
+    </div>
 
 <div id="privacyView" class="privacy-view">
-  
+
 <div class="privacy-content">
     <h2>Privacy Policy</h2>
     <p><strong>Last updated: July 28, 2026</strong></p>
@@ -409,29 +458,16 @@
         function showView(viewName) {
             const gamesView = document.getElementById('gamesView');
             const privacyView = document.getElementById('privacyView');
+            const aboutView = document.getElementById('aboutView');
             document.getElementById('dropdownMenu').classList.remove('active');
 
+            gamesView.style.display = 'none';
+            privacyView.classList.remove('active');
+            aboutView.classList.remove('active');
+
             if (viewName === 'privacy') {
-                gamesView.style.display = 'none';
                 privacyView.classList.add('active');
+            } else if (viewName === 'about') {
+                aboutView.classList.add('active');
             } else {
                 gamesView.style.display = 'block';
-                privacyView.classList.remove('active');
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            if (window.location.hash === '#privacy') {
-                showView('privacy');
-            }
-        });
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.menu-btn') && !event.target.closest('.menu-btn')) {
-                document.getElementById('dropdownMenu').classList.remove('active');
-            }
-        }
-    </script>
-</body>
-</html>
