@@ -1,473 +1,450 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9626100459088181"
-     crossorigin="anonymous"></script>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9626100459088181"  
+     crossorigin="anonymous"></script>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>DoneeerCorporation | Indie Games & Apps</title>  
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+<style>  
+    :root {  
+        --bg-color: #0b0f19;  
+        --card-bg: #131c2e;  
+        --accent: #6366f1;  
+        --accent-glow: rgba(99, 102, 241, 0.4);  
+        --text-main: #f8fafc;  
+        --text-muted: #94a3b8;  
+        --border-color: rgba(255, 255, 255, 0.08);  
+        --radius: 16px;  
+    }  
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoneeerCorporation | Indie Games & Apps</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: #131c2e;
-            --accent: #6366f1;
-            --accent-glow: rgba(99, 102, 241, 0.4);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --radius: 16px;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }  
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {  
+        font-family: 'Outfit', sans-serif;  
+        background-color: var(--bg-color);  
+        color: var(--text-main);  
+        min-height: 100vh;  
+        line-height: 1.6;  
+        overflow-x: hidden;  
+    }  
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    nav {  
+        position: fixed;  
+        top: 0;  
+        left: 0;  
+        width: 100%;  
+        background: rgba(11, 15, 25, 0.85);  
+        backdrop-filter: blur(10px);  
+        border-bottom: 1px solid var(--border-color);  
+        display: flex;  
+        justify-content: space-between;  
+        align-items: center;  
+        padding: 15px 30px;  
+        z-index: 1000;  
+    }  
 
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            z-index: 1000;
-        }
+    .nav-logo {  
+        font-size: 1.25rem;  
+        font-weight: 800;  
+        color: var(--text-main);  
+        text-decoration: none;  
+        display: flex;  
+        align-items: center;  
+        gap: 8px;  
+        cursor: pointer;  
+    }  
 
-        .nav-logo {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--text-main);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
+    .menu-btn {  
+        background: none;  
+        border: none;  
+        color: var(--text-main);  
+        font-size: 1.5rem;  
+        cursor: pointer;  
+        padding: 5px;  
+        transition: color 0.2s;  
+    }  
+    .menu-btn:hover { color: var(--accent); }  
 
-        .menu-btn {
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 5px;
-            transition: color 0.2s;
-        }
-        .menu-btn:hover { color: var(--accent); }
+    .dropdown-menu {  
+        position: absolute;  
+        top: 70px;  
+        right: 20px;  
+        background: var(--card-bg);  
+        border: 1px solid var(--border-color);  
+        border-radius: var(--radius);  
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);  
+        width: 230px;  
+        display: none;  
+        flex-direction: column;  
+        overflow: hidden;  
+        z-index: 1001;  
+    }  
+    .dropdown-menu.active { display: flex; }  
 
-        .dropdown-menu {
-            position: absolute;
-            top: 70px;
-            right: 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            width: 230px;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            z-index: 1001;
-        }
-        .dropdown-menu.active { display: flex; }
+    .dropdown-item {  
+        padding: 14px 20px;  
+        color: var(--text-main);  
+        text-decoration: none;  
+        font-size: 0.95rem;  
+        font-weight: 600;  
+        display: flex;  
+        align-items: center;  
+        gap: 12px;  
+        border-bottom: 1px solid var(--border-color);  
+        transition: background 0.2s, color 0.2s;  
+        cursor: pointer;  
+    }  
+    .dropdown-item:last-child { border-bottom: none; }  
+    .dropdown-item:hover { background: rgba(99, 102, 241, 0.15); color: var(--accent); }  
 
-        .dropdown-item {
-            padding: 14px 20px;
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-bottom: 1px solid var(--border-color);
-            transition: background 0.2s, color 0.2s;
-            cursor: pointer;
-        }
-        .dropdown-item:last-child { border-bottom: none; }
-        .dropdown-item:hover { background: rgba(99, 102, 241, 0.15); color: var(--accent); }
+    header {  
+        text-align: center;  
+        padding: 140px 20px 40px;  
+        max-width: 800px;  
+        margin: 0 auto;  
+    }  
 
-        header {
-            text-align: center;
-            padding: 140px 20px 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    .studio-badge {  
+        display: inline-block;  
+        background: rgba(99, 102, 241, 0.15);  
+        color: var(--accent);  
+        padding: 6px 16px;  
+        border-radius: 50px;  
+        font-size: 0.9rem;  
+        font-weight: 600;  
+        margin-bottom: 20px;  
+        border: 1px solid rgba(99, 102, 241, 0.3);  
+    }  
 
-        .studio-badge {
-            display: inline-block;
-            background: rgba(99, 102, 241, 0.15);
-            color: var(--accent);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border: 1px solid rgba(99, 102, 241, 0.3);
-        }
+    header h1 {  
+        font-size: 3rem;  
+        font-weight: 800;  
+        margin-bottom: 15px;  
+        background: linear-gradient(135deg, #fff 30%, #94a3b8 100%);  
+        -webkit-background-clip: text;  
+        -webkit-text-fill-color: transparent;  
+    }  
+    header p { color: var(--text-muted); font-size: 1.15rem; }  
 
-        header h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #fff 30%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        header p { color: var(--text-muted); font-size: 1.15rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px 20px 80px; }  
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px 20px 80px; }
+    .section-title {  
+        font-size: 1.8rem;  
+        font-weight: 700;  
+        margin-bottom: 24px;  
+        display: flex;  
+        align-items: center;  
+        gap: 12px;  
+        border-left: 4px solid var(--accent);  
+        padding-left: 12px;  
+    }  
 
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-left: 4px solid var(--accent);
-            padding-left: 12px;
-        }
+    .grid {  
+        display: grid;  
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  
+        gap: 30px;  
+        margin-bottom: 60px;  
+    }  
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
+    .card {  
+        background-color: var(--card-bg);  
+        border-radius: var(--radius);  
+        border: 1px solid var(--border-color);  
+        overflow: hidden;  
+        display: flex;  
+        flex-direction: column;  
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;  
+    }  
+    .card:hover {  
+        transform: translateY(-6px);  
+        box-shadow: 0 12px 30px var(--accent-glow);  
+        border-color: rgba(99, 102, 241, 0.4);  
+    }  
 
-        .card {
-            background-color: var(--card-bg);
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px var(--accent-glow);
-            border-color: rgba(99, 102, 241, 0.4);
-        }
+    .card-img {  
+        width: 100%;  
+        height: 180px;  
+        object-fit: cover;  
+        border-bottom: 1px solid var(--border-color);  
+        background: #1e293b;  
+    }  
 
-        .card-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--border-color);
-            background: #1e293b;
-        }
+    .card-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }  
+    .card-tag {  
+        font-size: 0.75rem;  
+        font-weight: 700;  
+        text-transform: uppercase;  
+        letter-spacing: 1px;  
+        color: var(--accent);  
+        margin-bottom: 8px;  
+    }  
+    .card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }  
+    .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; flex-grow: 1; }  
 
-        .card-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
-        .card-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-        .card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }
-        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; flex-grow: 1; }
+    .store-buttons { display: flex; gap: 10px; flex-wrap: wrap; }  
+    .btn-store {  
+        flex: 1;  
+        min-width: 120px;  
+        padding: 10px 14px;  
+        border-radius: 10px;  
+        background: rgba(255, 255, 255, 0.05);  
+        border: 1px solid var(--border-color);  
+        color: var(--text-main);  
+        text-decoration: none;  
+        font-size: 0.85rem;  
+        font-weight: 600;  
+        display: flex;  
+        align-items: center;  
+        justify-content: center;  
+        gap: 8px;  
+        transition: background 0.2s, border-color 0.2s;  
+    }  
+    .btn-store:hover { background: rgba(99, 102, 241, 0.2); border-color: var(--accent); }  
+    .btn-store i { font-size: 1.1rem; }  
 
-        .store-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-        .btn-store {
-            flex: 1;
-            min-width: 120px;
-            padding: 10px 14px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: background 0.2s, border-color 0.2s;
-        }
-        .btn-store:hover { background: rgba(99, 102, 241, 0.2); border-color: var(--accent); }
-        .btn-store i { font-size: 1.1rem; }
+    .view-section {  
+        display: none;  
+        max-width: 800px;  
+        margin: 40px auto 80px;  
+        background: var(--card-bg);  
+        border: 1px solid var(--border-color);  
+        border-radius: var(--radius);  
+        padding: 40px;  
+    }  
+    .view-section.active { display: block; }  
+    
+    .view-section h2 { color: var(--text-main); font-size: 2rem; margin-bottom: 8px; }  
+    .view-section h3 {  
+        color: var(--text-main);  
+        font-size: 1.3rem;  
+        margin-top: 30px;  
+        margin-bottom: 12px;  
+        border-bottom: 2px solid var(--border-color);  
+        padding-bottom: 8px;  
+    }  
+    .view-section p, .view-section li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 14px; }  
+    .view-section ul { padding-left: 20px; margin-bottom: 14px; }  
+    .view-section a { color: var(--accent); text-decoration: none; }  
+    .view-section a:hover { text-decoration: underline; }  
 
-        .privacy-view {
-            display: none;
-            max-width: 800px;
-            margin: 40px auto 80px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 40px;
-        }
-        .privacy-view.active { display: block; }
-        .privacy-content h2 { color: var(--text-main); font-size: 2rem; margin-bottom: 8px; }
-        .privacy-content h3 {
-            color: var(--text-main);
-            font-size: 1.3rem;
-            margin-top: 30px;
-            margin-bottom: 12px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
-        }
-        .privacy-content p, .privacy-content li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 14px; }
-        .privacy-content ul { padding-left: 20px; margin-bottom: 14px; }
-        .privacy-content a { color: var(--accent); text-decoration: none; }
-        .privacy-content a:hover { text-decoration: underline; }
+    footer {  
+        text-align: center;  
+        padding: 40px 20px;  
+        border-top: 1px solid var(--border-color);  
+        color: var(--text-muted);  
+        font-size: 0.9rem;  
+    }  
 
-        .about-badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 30px; }
-        .about-badge {
-            background: rgba(99, 102, 241, 0.12);
-            color: var(--accent);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .contact-box {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 18px 22px;
-            margin-top: 10px;
-        }
-        .contact-box i { font-size: 1.4rem; color: var(--accent); }
-        .contact-box a { color: var(--text-main); text-decoration: none; font-weight: 600; }
-        .contact-box a:hover { color: var(--accent); }
+    @media (max-width: 768px) {  
+        header h1 { font-size: 2.2rem; }  
+        .view-section { padding: 20px; }  
+    }  
+</style>
+</head>  
+<body>  
 
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+<nav>  
+    <a class="nav-logo" onclick="showView('games')"><i class="fa-solid fa-gamepad" style="color: var(--accent);"></i> DoneeerCorporation</a>  
+    <button class="menu-btn" id="menuBtn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>  
 
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
-            .privacy-view { padding: 20px; }
-        }
-    </style>
-</head>
-<body>
+    <div class="dropdown-menu" id="dropdownMenu">  
+        <a class="dropdown-item" onclick="showView('games')"><i class="fa-solid fa-dice" style="color: var(--accent);"></i> Games & Apps</a>  
+        <a class="dropdown-item" onclick="showView('about')"><i class="fa-solid fa-user-astronaut" style="color: var(--accent);"></i> About Me</a>  
+        <a class="dropdown-item" onclick="showView('privacy')"><i class="fa-solid fa-shield-halved" style="color: var(--accent);"></i> Privacy Policy</a>  
+    </div>  
+</nav>  
 
-    <nav>
-        <a class="nav-logo" onclick="showView('games')"><i class="fa-solid fa-gamepad" style="color: var(--accent);"></i> DoneeerCorporation</a>
-        <button class="menu-btn" id="menuBtn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+<div id="gamesView" class="main-view">  
+    <header>  
+        <div class="studio-badge"><i class="fa-solid fa-gamepad"></i> Solo Indie Developer</div>  
+        <h1>DoneeerCorporation</h1>  
+        <p>Creating engaging mobile games and useful applications with passion.</p>  
+    </header>  
 
-        <div class="dropdown-menu" id="dropdownMenu">
-            <a class="dropdown-item" onclick="showView('games')"><i class="fa-solid fa-dice" style="color: var(--accent);"></i> Games & Apps</a>
-            <a class="dropdown-item" onclick="showView('about')"><i class="fa-solid fa-circle-info" style="color: var(--accent);"></i> About</a>
-            <a class="dropdown-item" onclick="showView('privacy')"><i class="fa-solid fa-shield-halved" style="color: var(--accent);"></i> Privacy Policy</a>
-        </div>
-    </nav>
+    <div class="container">  
+        <div class="section-title"><i class="fa-solid fa-dice"></i> My Games</div>  
+        <div class="grid">  
+            <div class="card">  
+                <img src="images/parrot-fly.png" alt="Parrot Fly" class="card-img">  
+                <div class="card-content">  
+                    <span class="card-tag">Pixel Runner</span>  
+                    <h3>Parrot Fly</h3>  
+                    <p>Pixel runner! Fly, dodge obstacles, upgrade skills, and reach the finish line!</p>  
+                    <div class="store-buttons">  
+                        <a href="https://play.google.com/store/apps/details?id=com.DoneeerCorporation.ParrotFly" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>  
+                        <a href="https://www.amazon.com/gp/product/B0HBL69F8C" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>  
+                    </div>  
+                </div>  
+            </div>  
 
-    <div id="gamesView">
-        <header>
-            <div class="studio-badge"><i class="fa-solid fa-gamepad"></i> Solo Indie Developer</div>
-            <h1>DoneeerCorporation</h1>
-            <p>Creating engaging mobile games and useful applications with passion.</p>
-        </header>
+            <div class="card">  
+                <img src="images/tap-duck.png" alt="Tap Duck" class="card-img">  
+                <div class="card-content">  
+                    <span class="card-tag">Idle Clicker</span>  
+                    <h3>Tap Duck</h3>  
+                    <p>Upgrade ducks, explore space, and prestige to become the ultimate duck tycoon!</p>  
+                    <div class="store-buttons">  
+                        <a href="https://play.google.com/store/apps/details?id=com.doneeercorporation.TapDuck" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>  
+                        <a href="AMAZON_LINK_2" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>  
+                    </div>  
+                </div>  
+            </div>  
 
-        <div class="container">
-            <div class="section-title"><i class="fa-solid fa-dice"></i> My Games</div>
-            <div class="grid">
-                <div class="card">
-                    <img src="images/parrot-fly.png" alt="Parrot Fly" class="card-img">
-                    <div class="card-content">
-                        <span class="card-tag">Pixel Runner</span>
-                        <h3>Parrot Fly</h3>
-                        <p>Pixel runner! Fly, dodge obstacles, upgrade skills, and reach the finish line!</p>
-                        <div class="store-buttons">
-                            <a href="https://play.google.com/store/apps/details?id=com.DoneeerCorporation.ParrotFly" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
-                            <a href="https://www.amazon.com/gp/product/B0HBL69F8C" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="card">  
+                <img src="images/walking-virus.png" alt="Walking Virus" class="card-img">  
+                <div class="card-content">  
+                    <span class="card-tag">Zombie Idle RPG</span>  
+                    <h3>Walking Virus</h3>  
+                    <p>Tap to survive the zombie apocalypse! Choose your side, upgrade, and fight waves.</p>  
+                    <div class="store-buttons">  
+                        <a href="https://play.google.com/store/apps/details?id=com.DoneeerCorporation.WalkingVirus" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>  
+                        <a href="AMAZON_LINK_3" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>  
+                    </div>  
+                </div>  
+            </div>  
+        </div>  
 
-                <div class="card">
-                    <img src="images/tap-duck.png" alt="Tap Duck" class="card-img">
-                    <div class="card-content">
-                        <span class="card-tag">Idle Clicker</span>
-                        <h3>Tap Duck</h3>
-                        <p>Upgrade ducks, explore space, and prestige to become the ultimate duck tycoon!</p>
-                        <div class="store-buttons">
-                            <a href="https://play.google.com/store/apps/details?id=com.doneeercorporation.TapDuck" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
-                            <a href="AMAZON_LINK_2" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="images/walking-virus.png" alt="Walking Virus" class="card-img">
-                    <div class="card-content">
-                        <span class="card-tag">Zombie Idle RPG</span>
-                        <h3>Walking Virus</h3>
-                        <p>Tap to survive the zombie apocalypse! Choose your side, upgrade, and fight waves.</p>
-                        <div class="store-buttons">
-                            <a href="https://play.google.com/store/apps/details?id=com.DoneeerCorporation.WalkingVirus" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
-                            <a href="AMAZON_LINK_3" class="btn-store" target="_blank"><i class="fa-brands fa-amazon"></i> Amazon</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-title"><i class="fa-solid fa-toolbox"></i> Applications</div>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 580px;">
-                <div class="card">
-                    <img src="images/scango.png" alt="ScanGo" class="card-img">
-                    <div class="card-content">
-                        <span class="card-tag">PDF Scanner</span>
-                        <h3>ScanGo</h3>
-                        <p>Scan, crop, and convert paper documents into high-quality PDFs instantly.</p>
-                        <div class="store-buttons">
-                            <a href="https://play.google.com/store/apps/details?id=com.doneeercorporation.scangopdfscanner" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="aboutView" class="privacy-view">
-        <div class="privacy-content">
-            <h2>About</h2>
-            <p><strong>Hi, I'm the developer behind DoneeerCorporation 👋</strong></p>
-
-            <div class="about-badges">
-                <span class="about-badge"><i class="fa-solid fa-user"></i> Solo Indie Developer</span>
-                <span class="about-badge"><i class="fa-solid fa-seedling"></i> Just Getting Started</span>
-                <span class="about-badge"><i class="fa-solid fa-mobile-screen"></i> Mobile Games & Apps</span>
-            </div>
-
-            <p>I'm a one-person indie studio building small mobile games and apps for Google Play and beyond. There's no big team behind DoneeerCorporation — just me, learning as I go and trying to make games that are fun, polished, and a little different from the usual.</p>
-
-            <p>I'm still fairly new to this, so every release is a step in figuring out what works — from gameplay design to actually getting a game in front of players. Right now that means pixel runners, idle clickers, and small utility apps, but I'm always experimenting with new ideas.</p>
-
-            <h3>Let's connect</h3>
-            <p>I'm genuinely open to feedback, collaborations, or just hearing from other developers and players. If you've got ideas, want to team up, spotted a bug, or just want to say hi — reach out anytime.</p>
-
-            <div class="contact-box">
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:doneeercorporation@gmail.com">doneeercorporation@gmail.com</a>
-            </div>
-        </div>
-    </div>
-
-<div id="privacyView" class="privacy-view">
-
-<div class="privacy-content">
-    <h2>Privacy Policy</h2>
-    <p><strong>Last updated: July 28, 2026</strong></p>
-
-    <p>DoneeerCorporation ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and disclose information when you use our games, applications, websites, and related services.</p>
-
-    <h3>1. Information We Collect</h3>
-
-    <p>We do not directly collect or store personal information such as your name, address, email address, or phone number.</p>
-
-    <p><strong>Local Data:</strong> Our games and applications may store game progress, settings, and other data locally on your device using technologies such as Unity PlayerPrefs, local storage, or similar methods. This information remains on your device unless you choose to remove it.</p>
-
-    <p><strong>Advertising Data:</strong> Our games, applications, and websites may display advertisements through third-party advertising providers, including Google AdMob and Google AdSense. These services may collect information such as your advertising identifier, IP address, browser type, device information, cookies, and other technical identifiers in order to:</p>
-
-    <ul>
-        <li>Display relevant advertisements.</li>
-        <li>Measure advertising performance.</li>
-        <li>Prevent fraud and abuse.</li>
-        <li>Improve advertising quality.</li>
-    </ul>
-
-    <h3>2. Cookies</h3>
-
-    <p>Our website may use cookies and similar technologies. These may be used by Google AdSense and other third-party partners to personalize advertisements, measure performance, and improve user experience.</p>
-
-    <h3>3. How We Use Information</h3>
-
-    <p>The limited information collected through our services is used only to:</p>
-
-    <ul>
-        <li>Provide and maintain our games, applications, and website.</li>
-        <li>Display advertisements.</li>
-        <li>Analyze usage and improve our products.</li>
-        <li>Protect against fraud, abuse, and technical issues.</li>
-    </ul>
-
-    <h3>4. Data Retention</h3>
-
-    <p>We do not maintain servers that store your personal information. Local game data remains on your device until you remove it by clearing application data, browser storage, or uninstalling the application.</p>
-
-    <h3>5. Third-Party Services</h3>
-
-    <p>Our products may use third-party services including, but not limited to:</p>
-
-    <ul>
-        <li>Google AdMob</li>
-        <li>Google AdSense</li>
-        <li>Google Play Services</li>
-    </ul>
-
-    <p>These services have their own privacy policies. Google's Privacy Policy is available at:</p>
-
-    <p>
-        <a href="https://policies.google.com/privacy" target="_blank">
-            https://policies.google.com/privacy
-        </a>
-    </p>
-
-    <h3>6. Children's Privacy</h3>
-
-    <p>Our games, applications, and websites are intended for a general audience. We do not knowingly collect personal information from children under the age required by applicable law.</p>
-
-    <h3>7. Changes to This Privacy Policy</h3>
-
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
-
-    <h3>8. Contact</h3>
-<p>If you have any questions regarding this Privacy Policy, you may contact us at <a href="mailto:doneeercorporation@gmail.com">doneeercorporation@gmail.com</a>.</p>
-</div>
+        <div class="section-title"><i class="fa-solid fa-toolbox"></i> Applications</div>  
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 580px;">  
+            <div class="card">  
+                <img src="images/scango.png" alt="ScanGo" class="card-img">  
+                <div class="card-content">  
+                    <span class="card-tag">PDF Scanner</span>  
+                    <h3>ScanGo</h3>  
+                    <p>Scan, crop, and convert paper documents into high-quality PDFs instantly.</p>  
+                    <div class="store-buttons">  
+                        <a href="https://play.google.com/store/apps/details?id=com.doneeercorporation.scangopdfscanner" class="btn-store" target="_blank"><i class="fa-brands fa-google-play"></i> Google Play</a>  
+                    </div>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
 </div>
 
-    <footer>
-        <p>&copy; 2026 DoneeerCorporation. All rights reserved.</p>
-    </footer>
+<!-- ABOUT ME VIEW -->
+<div id="aboutView" class="view-section">  
+    <div class="privacy-content">  
+        <h2>About Me</h2>  
+        <p><strong>Hi there! Welcome to DoneeerCorporation.</strong></p>  
+        
+        <p>I am a solo indie developer starting my journey in game and application creation. My goal is to build interesting, fun games for the Google Play Store and web browsers, alongside practical utility apps that make daily tasks easier.</p>  
 
-    <script>
-        function toggleMenu() {
-            document.getElementById('dropdownMenu').classList.toggle('active');
-        }
+        <p>Being an independent creator allows me to experiment with unique concepts and pour my creativity straight into every project. Since I'm just starting out, every download, feedback, and review means the absolute world to me!</p>  
 
-        function showView(viewName) {
-            const gamesView = document.getElementById('gamesView');
-            const privacyView = document.getElementById('privacyView');
-            const aboutView = document.getElementById('aboutView');
-            document.getElementById('dropdownMenu').classList.remove('active');
+        <h3>Let's Connect & Collaborate</h3>  
+        <p>I am always open to new ideas, feedback, and potential partnerships or collaborations. If you want to chat, share suggestions, or work together on something cool, feel free to drop me an email:</p>  
+        
+        <p><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></p>  
+    </div>  
+</div>
 
-            gamesView.style.display = 'none';
-            privacyView.classList.remove('active');
-            aboutView.classList.remove('active');
+<!-- PRIVACY POLICY VIEW -->
+<div id="privacyView" class="view-section">  
+    <div class="privacy-content">  
+        <h2>Privacy Policy</h2>  
+        <p><strong>Last updated: July 28, 2026</strong></p>  
+        <p>DoneeerCorporation ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and disclose information when you use our games, applications, websites, and related services.</p>  
 
-            if (viewName === 'privacy') {
-                privacyView.classList.add('active');
-            } else if (viewName === 'about') {
-                aboutView.classList.add('active');
-            } else {
-                gamesView.style.display = 'block';
+        <h3>1. Information We Collect</h3>  
+        <p>We do not directly collect or store personal information such as your name, address, email address, or phone number.</p>  
+        <p><strong>Local Data:</strong> Our games and applications may store game progress, settings, and other data locally on your device using technologies such as Unity PlayerPrefs, local storage, or similar methods. This information remains on your device unless you choose to remove it.</p>  
+        <p><strong>Advertising Data:</strong> Our games, applications, and websites may display advertisements through third-party advertising providers, including Google AdMob and Google AdSense. These services may collect information such as your advertising identifier, IP address, browser type, device information, cookies, and other technical identifiers in order to:</p>  
+        <ul>  
+            <li>Display relevant advertisements.</li>  
+            <li>Measure advertising performance.</li>  
+            <li>Prevent fraud and abuse.</li>  
+            <li>Improve advertising quality.</li>  
+        </ul>  
+
+        <h3>2. Cookies</h3>  
+        <p>Our website may use cookies and similar technologies. These may be used by Google AdSense and other third-party partners to personalize advertisements, measure performance, and improve user experience.</p>  
+
+        <h3>3. How We Use Information</h3>  
+        <p>The limited information collected through our services is used only to:</p>  
+        <ul>  
+            <li>Provide and maintain our games, applications, and website.</li>  
+            <li>Display advertisements.</li>  
+            <li>Analyze usage and improve our products.</li>  
+            <li>Protect against fraud, abuse, and technical issues.</li>  
+        </ul>  
+
+        <h3>4. Data Retention</h3>  
+        <p>We do not maintain servers that store your personal information. Local game data remains on your device until you remove it by clearing application data, browser storage, or uninstalling the application.</p>  
+
+        <h3>5. Third-Party Services</h3>  
+        <p>Our products may use third-party services including, but not limited to:</p>  
+        <ul>  
+            <li>Google AdMob</li>  
+            <li>Google AdSense</li>  
+            <li>Google Play Services</li>  
+        </ul>  
+        <p>These services have their own privacy policies. Google's Privacy Policy is available at:</p>  
+        <p>  
+            <a href="https://policies.google.com/privacy" target="_blank">  
+                https://policies.google.com/privacy  
+            </a>  
+        </p>  
+
+        <h3>6. Children's Privacy</h3>  
+        <p>Our games, applications, and websites are intended for a general audience. We do not knowingly collect personal information from children under the age required by applicable law.</p>  
+
+        <h3>7. Changes to This Privacy Policy</h3>  
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>  
+
+        <h3>8. Contact</h3>  
+        <p>If you have any questions regarding this Privacy Policy, you may contact us through the contact information provided on this website or through the store page of our applications.</p>
+    </div>  
+</div>  
+
+<footer>  
+    <p>&copy; 2026 DoneeerCorporation. All rights reserved.</p>  
+</footer>  
+
+<script>  
+    function toggleMenu() {  
+        document.getElementById('dropdownMenu').classList.toggle('active');  
+    }  
+
+    function showView(viewName) {  
+        const gamesView = document.getElementById('gamesView');  
+        const aboutView = document.getElementById('aboutView');  
+        const privacyView = document.getElementById('privacyView');  
+        
+        document.getElementById('dropdownMenu').classList.remove('active');  
+
+        // Hide all views first
+        gamesView.style.display = 'none';  
+        aboutView.classList.remove('active');  
+        privacyView.classList.remove('active');  
+
+        // Show selected view
+        if (viewName === 'about') {  
+            aboutView.classList.add('active');  
+        } else if (viewName === 'privacy') {  
+            privacyView.classList.add('active');  
+        } else {  
+            gamesView.style.display = 'block';  
+        }  
+        window.scrollTo({ top: 0, behavior: 'smooth' });  
+    }  
+
+    window.addEventListener('DOMContentLoaded', () => {  
+        if (window.location.hash === '#privacy') {  
+            showView('privacy');  
+        } else if (window.location.hash === '#about') {  
+            showView('about');  
+        }  
+    });  
+
+    window.onclick = function(event) {  
+        if (!event.target.matches('.menu-btn') && !event.target.closest('.menu-btn')) {  
+            document.getElementById('dropdownMenu').classList.remove('active');  
+        }  
+    }  
+</script>
+
+</body>  
+</html>
