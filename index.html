@@ -418,36 +418,43 @@ footer {
         document.getElementById('dropdownMenu').classList.toggle('active');
     }
 
-    function showView(viewName) {
+    function showView(viewName, updateHash = true) {
         const gamesView = document.getElementById('gamesView');
         const aboutView = document.getElementById('aboutView');
         const privacyView = document.getElementById('privacyView');
 
         document.getElementById('dropdownMenu').classList.remove('active');
 
-        // Hide all views first
         gamesView.style.display = 'none';
         aboutView.classList.remove('active');
         privacyView.classList.remove('active');
 
-        // Show selected view
         if (viewName === 'about') {
             aboutView.classList.add('active');
+            if (updateHash) history.pushState(null, null, '#about');
         } else if (viewName === 'privacy') {
             privacyView.classList.add('active');
+            if (updateHash) history.pushState(null, null, '#privacy');
         } else {
             gamesView.style.display = 'block';
+            if (updateHash) history.pushState(null, null, ' ');
         }
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
+    function handleRouting() {
         if (window.location.hash === '#privacy') {
-            showView('privacy');
+            showView('privacy', false);
         } else if (window.location.hash === '#about') {
-            showView('about');
+            showView('about', false);
+        } else {
+            showView('games', false);
         }
-    });
+    }
+
+    window.addEventListener('DOMContentLoaded', handleRouting);
+
+    window.addEventListener('hashchange', handleRouting);
 
     window.onclick = function(event) {
         if (!event.target.matches('.menu-btn') && !event.target.closest('.menu-btn')) {
